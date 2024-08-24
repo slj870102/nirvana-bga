@@ -738,6 +738,11 @@ section.feedback {
     flex-wrap: wrap;
     flex-direction: row;
 }
+@media screen and (max-width: 1023px) {
+    .feedback .wrapper {
+        flex-direction: column;
+    }
+}
 
 .feedback .section {
     width: 50%;
