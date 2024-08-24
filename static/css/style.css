@@ -1,0 +1,1115 @@
+:root {
+    --primary: #aa2409;
+    --secondary: #f7b10a;
+    --description: #ebdec2;
+    --border-primary: #ea3012;
+    --border-secondary: #c77e19;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+body.dark {
+    background-color: #111;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #ccc;
+}
+
+body.dark::-webkit-scrollbar-track {
+    background-color: #222;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #aa2409;
+    border-radius: 2px;
+}
+
+h1.title {
+    margin: 20px auto 80px auto;
+    font-size: 46px;
+    /* font-family: 'Roboto', sans-serif; */
+    width: fit-content;
+    position: relative;
+    text-align: center;
+}
+
+body.dark h1.title {
+    color: #ccc;
+}
+
+h1.title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 2px;
+    border-radius: 30px;
+    background-color: #aa2409;
+}
+
+h1.title span {
+    color: #aa2409;
+}
+
+button.btn {
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 12px 30px;
+    width: 160px;
+    /*height: 40px;*/
+    border: 1px solid var(--border-secondary);
+    border-color: var(--border-primary);
+    /*border-radius: 30px;*/
+    background-color: rgba(159, 22, 0, .6);
+    color: var(--secondary);
+    cursor: pointer;
+    transition: .25s;
+}
+
+button.btn:hover {
+    background-color: var(--primary);
+}
+
+/* __________ Start PreLoader __________ */
+
+.preloader {
+    background-color: #fff;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 99999;
+}
+
+.preloader.dark_preloader {
+    background-color: #fff;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 99999;
+}
+
+body.dark .preloader.dark_preloader {
+    background-color: #000;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -25px 0 0 -25px;
+    font-size: 10px;
+    text-indent: -12345px;
+    z-index: 10000;
+}
+
+.double-bounce1, .double-bounce2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+body.dark .double-bounce1, .double-bounce2 {
+    background-color: #000;
+}
+
+.dark_preloader .double-bounce1, .double-bounce2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #aa2409;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+    0%, 100% {
+        -webkit-transform: scale(0.0)
+    }
+    50% {
+        -webkit-transform: scale(1.0)
+    }
+}
+
+@keyframes sk-bounce {
+    0%, 100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    }
+    50% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}
+
+/* __________ End PreLoader __________ */
+
+/* __________ Start Header __________ */
+
+header {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.navbar {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo {
+    text-decoration: none;
+    font-size: 36px;
+    font-weight: 800;
+    color: #aa2409;
+    text-shadow: 0 0 1px transparent, 0 1px 2px rgba(0, 0, 0, .8);
+
+
+}
+
+.navbar .list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.navbar .list li {
+    padding: 10px 15px;
+}
+
+.navbar .list a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+    transition: .25s;
+    position: relative;
+}
+
+body.dark .navbar .list a {
+    color: white;
+}
+
+.navbar .list a::before, .navbar .list a::after {
+    content: "";
+    width: 0;
+    height: 3px;
+    position: absolute;
+    bottom: -2;
+    background-color: #aa2409;
+    transition: .25s;
+}
+
+.navbar .list a::before {
+    left: 50%;
+}
+
+.navbar .list a::after {
+    right: 50%;
+}
+
+.navbar .list a:hover::before, .navbar .list a.active::before {
+    width: 50%;
+}
+
+.navbar .list a:hover::after, .navbar .list a.active::after {
+    width: 50%;
+}
+
+.navbar .list a:hover {
+    color: #aa2409;
+}
+
+
+#menu-btn {
+    display: none;
+}
+
+#navbar-sticky {
+    position: fixed;
+    top: 0;
+    background-color: white;
+    height: 10vh;
+    animation: fadeInDown 1s both 0.2s;
+}
+
+body.dark #navbar-sticky {
+    background-color: #111;
+}
+
+/* __________ End Header __________ */
+
+/* __________ Start Hero __________ */
+.video-wrapper {
+    width: 100%;
+    height: 300px; /* 设置你想要的高度 */
+    overflow: hidden;
+    position: relative;
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.video-panel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+    min-height: 100%;
+    min-width: 100%;
+    width: auto;
+    z-index: 1;
+}
+
+.section {
+    position: relative;
+    margin-bottom: 200px;
+}
+
+section.hero {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../picture/hero_light.png);
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+}
+
+body.dark section.hero {
+    background: url(../picture/hero.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+@media (max-width: 767px) {
+    body.dark section.hero {
+        background: url(../picture/hero.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+.hero .wrapper {
+    width: 80%;
+    margin: auto;
+    z-index: 2;
+}
+
+.hero .greeting {
+    position: relative;
+    z-index: 1;
+    color: var(--secondary)
+}
+
+.hero .greeting::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-40%, -20%);
+    width: 2rem;
+    height: 2rem;
+    background-color: #aa2409;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.hero .name {
+    font-size: 46px;
+    line-height: 1.5;
+    color: #fff;
+    text-shadow: 0 0 1px transparent, 0 1px 2px rgba(0, 0, 0, .8);
+    font-weight: 700;
+}
+
+body.dark .hero .greeting,
+body.dark .hero .name,
+body.dark .hero .profession {
+    color: white;
+    text-shadow: 0 0 1px transparent, 0 1px 2px rgba(0, 0, 0, .8);
+    font-weight: 700;
+}
+
+.hero .profession {
+    font-size: 24px;
+}
+
+.hero .description {
+    margin-top: 20px;
+    width: 50%;
+    line-height: 150%;
+    letter-spacing: 0.5px;
+    color: black;
+}
+
+body.dark .hero .description {
+    color: var(--description);
+    text-shadow: 0 0 1px transparent, 0 1px 2px rgba(0, 0, 0, .8);
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.hero button {
+    margin-top: 40px;
+}
+
+#prof {
+    color: #aa2409;
+}
+
+/* __________ End Hero __________ */
+
+/* __________ Start About __________ */
+
+section.about {
+    width: 100%;
+}
+
+.about .wrapper {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about .image {
+    display: flex;
+    background-color: black;
+    padding: 1px;
+    position: relative;
+    z-index: 1;
+}
+
+body.dark .image {
+    background-color: #555;
+}
+
+.about .image::after, .about .image::before {
+    content: "";
+    width: 12vw;
+    height: 12vw;
+    border-radius: 50%;
+    background-color: #aa2409;
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+/*.about .image::before {*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    transform: translate(-20%, -20%);*/
+/*}*/
+
+/*.about .image::after {*/
+/*    bottom: 0;*/
+/*    right: 0;*/
+/*    transform: translate(20%, 20%);*/
+/*}*/
+
+.about .image img {
+    width: 30vw;
+}
+
+.about .text {
+    width: 46vw;
+}
+
+.about .text .heading {
+    font-size: 30px;
+}
+
+.about .text .description {
+    margin-top: 20px;
+    line-height: 200%;
+    letter-spacing: 0.5px;
+    color: #333;
+}
+
+body.dark .about .text,
+body.dark .about .text .description,
+body.dark .about .text .detail td {
+    color: #aaa;
+}
+
+.about .text .detail {
+    margin-top: 20px;
+    letter-spacing: 0.5px;
+}
+
+.about .text .detail td {
+    padding: 8px 10px;
+}
+
+.about .text .detail .ans {
+    color: #333;
+}
+
+.about .text .btn {
+    margin-top: 20px;
+}
+
+/* __________ End About __________ */
+
+/* __________ Start Service __________ */
+
+section.service {
+    width: 100%;
+}
+
+.service .wrapper {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service .card {
+    text-align: center;
+    width: 24vw;
+    padding: 30px 20px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    transition: .25s;
+}
+
+body.dark .service .card {
+    border-color: #222;
+}
+
+.service .card .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    margin: auto;
+    background-color: #ccc;
+    border-radius: 20px;
+    transition: .25s;
+    background-color: #aa2409cc;
+}
+
+body.dark .service .card .icon {
+    background-color: #aa2409;
+    color: white;
+}
+
+.service .card .icon i {
+    font-size: 36px;
+}
+
+.service .card:hover {
+    background-color: #aa240950;
+}
+
+body.dark .service .card:hover {
+    background-color: #aa240910;
+}
+
+.service .card:hover .icon {
+    background-color: #aa2409;
+    transform: scale(1.1);
+}
+
+.service .card .heading {
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+body.dark .card .heading {
+    color: #ccc;
+}
+
+.service .card .description {
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: 400;
+    color: #333;
+    line-height: 150%;
+}
+
+body.dark .card .description {
+    color: #aaa;
+}
+
+/* __________ End Service __________ */
+
+/* __________ Start Portfolio __________ */
+
+section.portfolio {
+    width: 100%;
+}
+
+.portfolio .wrapper {
+    width: 80%;
+    margin: auto;
+}
+
+.portfolio .filter-list {
+    list-style: none;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.portfolio .filter-list button {
+    min-width: 100px;
+    text-align: center;
+    padding: 5px 15px;
+    margin: 8px;
+    color: var(--secondary);
+    border: 1px solid var(--border-secondary);
+    border-color: var(--border-primary);
+    /*border-radius: 30px;*/
+    background-color: rgba(159, 22, 0, .6);
+    color: var(--secondary);
+    cursor: pointer;
+    transition: .25s;
+}
+
+.portfolio .filter-list button:hover,
+.portfolio .filter-list button.active {
+    background-color: #aa2409;
+    color: #fff;
+}
+
+.portfolio .item-wrapper {
+    margin-top: 80px;
+    display: flex;
+    flex-display: row;
+    flex-wrap: wrap;
+}
+
+.portfolio .card {
+    display: flex;
+    margin: 0.5vw;
+}
+
+.portfolio .card img {
+    width: 25vw;
+}
+
+@media (max-width: 767px) {
+    .portfolio .card img:hover {
+        transform: scale(1.5);
+    }
+}
+
+.portfolio .card .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #0005;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .25s;
+}
+
+body.dark .portfolio .card .text {
+    background-color: #fff5;
+}
+
+.portfolio .card:hover .text {
+    opacity: 1;
+}
+
+/* Counter */
+
+.counter-wrapper {
+    margin-top: 200px;
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: linear-gradient(135deg, #aa2409ca, #aa240990);
+    background-attachment: fixed;
+    flex-wrap: wrap;
+}
+
+.counter-wrapper .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.counter-wrapper .card h2 {
+    font-size: 42px;
+    font-weight: 600;
+    color: #aa2409;
+}
+
+.counter-wrapper .card h2 span {
+    color: #fff;
+}
+
+.counter-wrapper .card h3 {
+    font-weight: 500;
+}
+
+/* __________ End Portfolio __________ */
+
+/* __________ Start feedback __________ */
+
+section.feedback {
+    width: 100%;
+}
+
+.feedback .wrapper {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.feedback .section {
+    width: 50%;
+    padding: 20px;
+}
+
+.feedback .section .title {
+    font-size: 30px;
+}
+
+body.dark .feedback .section .title,
+body.dark .feedback .card .heading {
+    color: #ccc;
+}
+
+.feedback .card {
+    padding: 30px;
+    border: 1px solid #bbb;
+    border-radius: 10px;
+    transition: .25s;
+    margin-top: 2vw;
+}
+
+body.dark .card {
+    border-color: #333;
+}
+
+.feedback .card:hover {
+    border-color: #aa2409;
+}
+
+.feedback .card .heading {
+    font-size: 20px;
+}
+
+.feedback .card .year {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.feedback .card .description {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 150%;
+    color: #333;
+}
+
+body.dark .feedback .card .year,
+body.dark .feedback .card .description {
+    color: #aaa;
+}
+
+body.dark .feedback .card:hover {
+    border-color: #aa240950;
+}
+
+/* __________ End feedback __________ */
+
+/* __________ Start Testimonial __________ */
+
+section.testimonial {
+    width: 100%;
+}
+
+.testimonial .wrapper {
+    width: 80%;
+    margin: auto;
+}
+
+.testimonial .card {
+    width: 24vw;
+}
+
+.testimonial .card .image {
+    display: flex;
+    width: 10vw;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #fff;
+    margin: auto;
+}
+
+.testimonial .card .image img {
+    display: block;
+}
+
+.testimonial .card .text {
+    text-align: center;
+}
+
+.testimonial .card .text .name {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.testimonial .card .text .prof {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.testimonial .card .text .stars {
+    margin-top: 10px;
+}
+
+.testimonial .card .text .stars i {
+    color: #aa2409;
+    font-size: 16px;
+}
+
+.testimonial .card .text .description {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 150%;
+    color: #333;
+
+}
+
+body.dark .testimonial .card .text .name,
+body.dark .testimonial .card .text .prof {
+    color: #ccc;
+}
+
+body.dark .testimonial .card .text .description {
+    color: #aaa;
+}
+
+/* __________ End Testimonial __________ */
+
+/* __________ Start Blog __________ */
+
+section.blog {
+    width: 100%;
+}
+
+.blog .wrapper {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.blog .card {
+    width: 25vw;
+}
+
+.blog .card .image {
+    display: flex;
+    overflow: hidden;
+}
+
+.blog .card .image img {
+    width: 25vw;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.blog .card:hover img {
+    transform: scale(1.1);
+}
+
+.blog .card .text {
+    margin-top: 10px;
+}
+
+.blog .card .text .date {
+    font-size: 12px;
+}
+
+body.dark .blog .card .text .date {
+    color: #ccc;
+}
+
+.blog .card .text .heading {
+    margin-top: 20px;
+    font-size: 22px;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.blog .card .text .heading:hover {
+    color: #aa2409;
+}
+
+.blog .card .text .description {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 150%;
+    color: #333;
+    width: 90%;
+}
+
+body.dark .blog .card .text .description {
+    color: #aaa;
+}
+
+.blog .card .text .read {
+    font-size: 14px;
+    text-decoration: none;
+    color: black;
+    transition: .25s;
+    color: #aa2409;
+}
+
+
+/* __________ End Blog __________ */
+
+/* __________ Start Contact __________ */
+
+section.contact {
+    width: 100%;
+}
+
+.contact .wrapper {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contact form {
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1vw;
+}
+
+.contact input, textarea {
+    height: 34px;
+    outline: none;
+    padding: 6px;
+    resize: none;
+    border: 1px solid #aaa;
+    background-color: transparent;
+    font-family: 'Poppins', sans-serif;
+    transition: .25s;
+}
+
+body.dark .contact input,
+body.dark .contact textarea {
+    background-color: #111;
+    border-color: #222;
+    color: #ccc;
+}
+
+.contact input:focus, textarea:focus {
+    border-color: #aa2409;
+}
+
+.contact form div {
+    width: 100%;
+    display: flex;
+    gap: 1vw;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#name {
+    width: 50%;
+}
+
+#email {
+    width: 50%
+}
+
+#subject {
+    width: 100%;
+}
+
+#message {
+    width: 100%;
+    height: 10vw;
+}
+
+.contact .text {
+    /*margin-left: 50px;*/
+    /*padding: 30px;*/
+}
+
+.contact .text p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+}
+
+.contact .text p i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    /*background-color: var(--primary);*/
+    color: var(--primary);
+    min-width: 50px;
+    min-height: 50px;
+    border-radius: 9999px;
+}
+
+body.dark .contact .text p {
+    color: #ccc;
+}
+
+.contact .text p span {
+    margin-left: 30px;
+}
+
+/* __________ End Contact __________ */
+
+/* __________ Start Footer __________ */
+
+footer {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #aa2409;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+}
+
+section {
+    margin-bottom: 160px;
+}
+@media (max-width: 1023px) {
+    section {
+        margin-top: 120px;
+        margin-bottom: 120px;
+    }
+    section.hero {
+        margin-top: 0;
+    }
+}
+
+/* __________ End Footer __________ */
+
+/* 遮罩层样式 */
+.image-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* 放大图片样式 */
+.image-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border: 3px solid white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+}
+
+.glide__slide img {
+    width: 100%; /* 设置固定的宽度 */
+    height: auto; /* 高度自动调整，保持比例 */
+    object-fit: cover; /* 如果你希望图片裁剪来适应容器 */
+}
